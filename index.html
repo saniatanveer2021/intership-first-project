@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: fontL;
+            src: url(./fonts/GintoNord-Light.woff2);
+        }
+
+        @font-face {
+            font-family: fontM;
+            src: url(./fonts/GintoNord-Medium.woff2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        head {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .navigation {
+            padding: 0.5vw 11vw;
+            width: 100vw;
+            position: relative;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navigation .leftSection {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        .leftSection img {
+            width: 10vw;
+        }
+
+        .leftSection span {
+            padding: 0.2vw 0.1vw;
+            position: relative;
+        }
+
+        span a {
+            text-decoration: none;
+            font-family: fontL;
+            font-size: 0.9vw;
+            font-weight: 600;
+            color: black;
+        }
+
+        a::before {
+            content: "";
+            height: 3%;
+            width: 0%;
+            border-radius: 50vw;
+            position: absolute;
+            top: 1.5vw;
+            left: 0%;
+            background-color: black;
+            transition: all 0.2s linear;
+        }
+
+        span a:hover::before {
+            width: 100%;
+        }
+
+        .learnMore {
+            position: relative;
+        }
+
+        .learnMore .heroSection {
+            width: 100vw;
+            padding-top: 3.5vw;
+            padding-bottom: 2.5vw;
+            margin-bottom: 2.3vw;
+            position: relative;
+            top: -3.5vh;
+            background-image: linear-gradient(175.12deg, rgba(222, 254, 220, 1) 7.79%, rgba(209, 255, 252, 1) 83.67%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heroSection .centerHeadings {
+            position: relative;
+            font-family: fontM;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        .centerHeadings h1 {
+            font-weight: 500;
+            font-size: 2.3vw;
+            line-height: 2.9vw;
+        }
+
+        .centerHeadings p {
+            font-family: fontL;
+            font-size: 0.9vw;
+            width: 67%;
+        }
+
+        .fixedNavigation {
+            width: 100vw;
+            padding: 1.5vw 0vw;
+            position: relative;
+            top: 19vw;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.3vw;
+            background-color: rgba(209, 255, 252, 1);
+        }
+
+        .fixedNavigation .anchorSection {
+            height: 1.3vw;
+            width: auto;
+            position: relative;
+            line-height: 1.1vw;
+        }
+
+        .anchorSection a {
+            text-decoration: none;
+            font-size: 0.8vw;
+            font-family: fontM;
+            font-weight: 300;
+            color: black;
+        }
+
+        .anchorSection .line {
+            height: 5.5%;
+            width: 100%;
+            background-color: black;
+        }
+
+        .firstBrandSection {
+            position: relative;
+            padding: 2.3vw 10.6vw;
+        }
+
+        .firstBrandSection .topTextWitIMGContainer {
+            height: 57vh;
+            width: 100%;
+            position: relative;
+            border-radius: 0.5vw;
+            box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .topTextWitIMGContainer .backgroundIMGContainer {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border-radius: 0.5vw;
+        }
+
+        .topTextWitIMGContainer>#firstIMG {
+            background-image: url(./images/Homepage_Image_for_New_Web_4_3.webp);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .topTextWitIMGContainer>#secondIMG {
+            background-image: url(./images/Night-Minerals-Berries-Ingredients-Page-Desktop.webp);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .topTextWitIMGContainer>#thirdIMG {
+            background-image: url(./images/Ingredients-Protein-for-Ingredients-Page-Desktop\ \(1\).webp);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .topTextWitIMGContainer>#forthIMG {
+            background-image: url(./images/Peppermint-Gradient-Ingredients-Page-Desktop.webp);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .topTextWitIMGContainer .leftSideHeadings {
+            height: 100%;
+            width: 60%;
+            padding-left: 6%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        .leftSideHeadings .topHeadings {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5vw;
+        }
+
+        .topHeadings h1 {
+            font-family: fontM;
+            font-size: 1.9vw;
+            font-weight: 500;
+            margin-bottom: 0.5vw;
+        }
+
+        .topHeadings h4 {
+            font-size: 1vw;
+            font-family: fontL;
+        }
+
+        .leftSideHeadings button {
+            padding: 1vw 3vw;
+            font-family: fontM;
+            font-size: 0.9vw;
+            border: none;
+            background-color: #23E5D7;
+        }
+
+        .firstBrandSection .bottomCardsSection {
+            height: auto;
+            width: 100%;
+            position: relative;
+            padding: 1.5vw 0vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5vw;
+        }
+
+        .bottomCardsSection .firstSectionOfCards {
+            height: auto;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.3vw;
+        }
+
+        .firstSectionOfCards .card {
+            height: 53vh;
+            width: 18.5vw;
+            position: relative;
+            background-color: #F6F6F6;
+            border-radius: 0.5vw;
+            box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .card .imgWrapper {
+            height: 65%;
+            width: 100%;
+            position: relative;
+            border-top-left-radius: 0.5vw;
+            border-top-right-radius: 0.5vw;
+            overflow: hidden;
+        }
+
+        .imgWrapper img {
+            height: 114%;
+            width: 100%;
+            position: relative;
+            top: -9%;
+        }
+
+        .card .cardBottomHeadings {
+            height: 35%;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4vw;
+        }
+
+        .cardBottomHeadings h4 {
+            font-family: fontM;
+            font-size: 1vw;
+            font-weight: 500;
+        }
+
+        .cardBottomHeadings p {
+            font-family: fontL;
+            font-size: 0.8vw;
+            margin-bottom: 0.8vw;
+        }
+
+        .firstBrandSection .sectionBreakLine {
+            height: 0.1vw;
+            width: 100%;
+            margin-top: 3.4vw;
+            position: relative;
+            background-color: #61D5CC;
+        }
+
+        .footerSection {
+            height: 86vh;
+            width: 100vw;
+            position: relative;
+            background-image: linear-gradient(90deg, rgba(159, 236, 254, 1), rgba(234, 250, 247, 1) 36%, rgba(200, 253, 165, 1) 66%, rgba(200, 253, 165, 1) 100%);
+        }
+
+        .footerSection .topSection {
+            height: 75%;
+            width: 100%;
+            position: relative;
+            padding: 0vw 9.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topSection .leftSection {
+            height: 100%;
+            width: 45%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        .leftSection .firstHeadings {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5vw;
+        }
+
+        .firstHeadings h1 {
+            font-family: fontM;
+            font-size: 1.7vw;
+            font-weight: 500;
+        }
+
+        .firstHeadings h3 {
+            font-family: fontM;
+            font-weight: 500;
+            font-size: 1.1vw;
+        }
+
+        .firstHeadings input {
+            width: 65%;
+            padding: 0.8vw 1.4vw;
+            font-size: 1vw;
+            margin-top: 1vw;
+        }
+
+        .leftSection .secondHeadings {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.2vw;
+        }
+
+        .secondHeadings h4 {
+            font-family: fontM;
+            font-weight: 500;
+            font-size: 0.9vw;
+        }
+
+        .secondHeadings a {
+            font-family: fontL;
+            font-size: 0.9vw;
+            font-weight: 400;
+            color: black;
+        }
+
+        .footerSection .rightSection {
+            height: 100%;
+            width: 55%;
+            padding: 4.5vw 3vw;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 8vw;
+        }
+
+        .rightSection .leftLinks {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4vw;
+        }
+
+        .leftLinks span {
+            padding: 0vw 0.1vw;
+            position: relative;
+            font-family: fontL;
+        }
+
+        .leftLinks a {
+            font-weight: 400;
+            font-size: 0.9vw;
+        }
+
+        .footerSection .bottomSection {
+            height: 25%;
+            width: 100%;
+            position: relative;
+            padding: 0vw 9.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.09);
+        }
+
+        .bottomSection .leftHeadings {
+            height: 100%;
+            width: 40%;
+            padding: 2.5vw 0vw;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .leftHeadings .icons {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.8vw;
+        }
+
+        .icons a {
+            height: auto;
+            width: 1.4vw;
+            position: relative;
+        }
+
+        a svg {
+            width: 100%;
+        }
+
+        .bottomLinks span {
+            padding: 0vw 0.1vw;
+            position: relative;
+            font-family: fontL;
+        }
+
+        .bottomLinks a {
+            font-weight: 400;
+            font-size: 0.8vw;
+        }
+
+        .bottomSection .rightHeadings {
+            height: 100%;
+            width: 60%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 0.5vw;
+        }
+
+        .rightHeadings .topSectionText {
+            height: 42%;
+            width: 73%;
+            padding: 0vw 1.5vw;
+            position: relative;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .topSectionText p {
+            font-family: fontL;
+            font-size: 0.7vw;
+        }
+
+        .rightHeadings .bottomSectionText {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.2vw;
+        }
+
+        .bottomSectionText p {
+            font-family: fontL;
+            font-size: 0.8vw;
+            font-weight: 400;
+        }
+
+        .bottomSectionText span {
+            padding: 0vw 0.1vw;
+            position: relative;
+            font-family: fontL;
+        }
+
+        .bottomSectionText a {
+            font-weight: 500;
+            font-size: 0.7vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="leftSection">
+            <img id="logo" src="./images/Wholier-Logo-Black.avif" alt="">
+            <span>
+                <a href="">Shop</a>
+            </span>
+            <span>
+                <a href="">Reviews</a>
+            </span>
+            <span>
+                <a href="">Rewards</a>
+            </span>
+            <span>
+                <a href="">Learn</a>
+            </span>
+        </div>
+        <div class="rightSection">
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" fill="none"
+                class="icon icon-account" viewBox="0 0 18 19" width="20" height="20">
+                <path fill="#121212" fill-rule="evenodd"
+                    d="M6 4.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-4a4 4 0 1 0 0 8 4 4 0 0 0 0-8m5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15M9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" fill="none"
+                class="icon icon-cart-empty" viewBox="0 0 40 40" width="44" height="44">
+                <path fill="#121212" fill-rule="evenodd"
+                    d="M15.75 11.8h-3.16l-.77 11.6a5 5 0 0 0 4.99 5.34h7.38a5 5 0 0 0 4.99-5.33L28.4 11.8zm0 1h-2.22l-.71 10.67a4 4 0 0 0 3.99 4.27h7.38a4 4 0 0 0 4-4.27l-.72-10.67h-2.22v.63a4.75 4.75 0 1 1-9.5 0zm8.5 0h-7.5v.63a3.75 3.75 0 1 0 7.5 0z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <div class="fixedNavigation">
+        <div class="anchorSection">
+            <a href="#multi">MULTI</a>
+            <div class="line"></div>
+        </div>
+        <div class="anchorSection">
+            <a href="#nightMinerals">NIGHT MINERALS</a>
+            <div class="line"></div>
+        </div>
+        <div class="anchorSection">
+            <a href="#protein-powder">PROTEIN POWDER</a>
+            <div class="line"></div>
+        </div>
+        <div class="anchorSection">
+            <a href="#stomuch-soother">PEPPERMINT STOMACH SOOTHER</a>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="learnMore">
+        <div class="heroSection">
+            <div class="centerHeadings">
+                <h1>Science backed +<br>consciously sourced</h1>
+                <p>We’re intentional about the vitamins, minerals, and food-based ingredients we use. Learn about their
+                    sources and benefits.</p>
+            </div>
+        </div>
+        <div id="multi" class="firstBrandSection">
+            <div class="topTextWitIMGContainer">
+                <div id="firstIMG" class="backgroundIMGContainer"></div>
+                <div class="leftSideHeadings">
+                    <div class="topHeadings">
+                        <h1>Multi for Plant-Based People</h1>
+                        <h4>8 essential nutrients,</h4>
+                        <h4>1 balanced multivitamin</h4>
+                    </div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div class="bottomCardsSection">
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/OMEGA3.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>OMEGA - 3</h4>
+                            <p>DHA + EPA from fermented microalgae</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/3495-10D-PDD_HLR-RGB-INGREDIENTS.jpg" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>VITAMIN K2</h4>
+                            <p>Non-soy MK-7 from fermented chickpeas</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/Mask_Group-5.avif" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>IRON</h4>
+                            <p>From fermented Koji rice + bisglycinate</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/Mask_Group-6_1480x_46809189-2cf0-4916-a203-118f3e62f394.avif" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>IODINE</h4>
+                            <p>Iodine from sea kelp</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/3495-13E-PDD_HLR-RGB-INGREDIENTS-VITAMIND.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>VITAMIN D3</h4>
+                            <p>Cholecalciferol from microalgae</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/Mask_Group-6_1480x_46809189-2cf0-4916-a203-118f3e62f394.avif" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>SELENIUM</h4>
+                            <p>Selenomethionine from gluten-free yeast</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/Vitamin-B12.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>VITAMIN B12</h4>
+                            <p>Methylcobalamin</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/Mask_Group_.avif" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ZINC</h4>
+                            <p>Zinc citrate</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sectionBreakLine"></div>
+        </div>
+        <div id="nightMinerals" class="firstBrandSection">
+            <div class="topTextWitIMGContainer">
+                <div id="secondIMG" class="backgroundIMGContainer"></div>
+                <div class="leftSideHeadings">
+                    <div class="topHeadings">
+                        <h1>Night Minerals Magnesium +<br>Calcium Drink</h1>
+                        <h4>The nighttime drink formulated to support better sleep</h4>
+                    </div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div class="bottomCardsSection">
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/section3.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>Magnesium</h4>
+                            <p>Magnesium glycinate and citrate<br>from seawater</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/section2.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>Calcium</h4>
+                            <p>Calcium citrate malate</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/section2webp.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>Superfood Berries</h4>
+                            <p>Superfood berries and tart cherry juice</p>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sectionBreakLine"></div>
+        </div>
+        <div id="protein-powder" class="firstBrandSection">
+            <div class="topTextWitIMGContainer">
+                <div id="thirdIMG" class="backgroundIMGContainer"></div>
+                <div class="leftSideHeadings">
+                    <div class="topHeadings">
+                        <h1>Organic Plant Protein + <br> Prebiotics</h1>
+                        <h4>The 100% additive-free organic plant protein</h4>
+                    </div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div class="bottomCardsSection">
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/31.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC YELLOW PEA <br> PROTEIN</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/32.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC FLAXSEED<br>PROTEIN</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/33.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC FLAXSEED<br>PROTEIN</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/34.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC SUNFLOWER<br>SEED PROTEIN</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/35.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC PUMPKIN SEED PROTEIN</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/36.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC GROUND PSYLLIUM HUSK</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/37.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC GREEN BANANA</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/38.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>ORGANIC COCONUT MILK</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="stomuch-soother" class="firstBrandSection">
+            <div class="topTextWitIMGContainer">
+                <div id="forthIMG" class="backgroundIMGContainer"></div>
+                <div class="leftSideHeadings">
+                    <div class="topHeadings">
+                        <h1>Peppermint Stomach Soother</h1>
+                        <h4>The natural way to relieve your digestive issues</h4>
+                    </div>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+            <div class="bottomCardsSection">
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/41.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>PEPPERMINT OIL</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/42.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>SPEARMINT OIL</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/43.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>FENNEL SEED OIL</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/44.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>GINGER ROOT OIL</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="firstSectionOfCards">
+                    <div class="card">
+                        <div class="imgWrapper">
+                            <img src="./images/45.webp" alt="">
+                        </div>
+                        <div class="cardBottomHeadings">
+                            <h4>CUMIN SEED OIL</h4>
+                            <div class="anchorSection">
+                                <a href="#">Learn More</a>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sectionBreakLine"></div>
+        </div>
+        <div class="footerSection">
+            <div class="topSection">
+                <div class="leftSection">
+                    <div class="firstHeadings">
+                        <h1>Get Exclusive Access + Discounts</h1>
+                        <h3>Join the wholier community!</h3>
+                        <input type="text" name="text" placeholder="Email">
+                    </div>
+                    <div class="secondHeadings">
+                        <h4>Contact Us</h4>
+                        <p><u><a href="#">hello@livewholier.com</a></u></p>
+                    </div>
+                    <div class="secondHeadings">
+                        <h4>Text Us</h4>
+                        <p><u><a href="#">Text TALKWHOLIER</a></u></p>
+                        <p><u><a href="#">to +1 (844) 905-1876</a></u></p>
+                    </div>
+                </div>
+                <div class="rightSection">
+                    <div class="leftLinks">
+                        <span>
+                            <a href="#">Rewards</a>
+                        </span>
+                        <span>
+                            <a href="#">Refer a Friend</a>
+                        </span>
+                        <span>
+                            <a href="#">About Us</a>
+                        </span>
+                        <span>
+                            <a id="Ingredients" href="#">Ingredients</a>
+                        </span>
+                        <span>
+                            <a href="#">Refund Policy</a>
+                        </span>
+                        <span>
+                            <a href="#">Privacy Policy</a>
+                        </span>
+                        <span>
+                            <a href="#">Terms of Use</a>
+                        </span>
+                    </div>
+                    <div class="leftLinks">
+                        <span>
+                            <a href="#">Shop</a>
+                        </span>
+                        <span>
+                            <a href="#">Reviews</a>
+                        </span>
+                        <span>
+                            <a href="#">Store Locator</a>
+                        </span>
+                        <span>
+                            <a href="#">the Source</a>
+                        </span>
+                        <span>
+                            <a href="#">Help & FAQs</a>
+                        </span>
+                        <span>
+                            <a href="#">Account Login</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomSection">
+                <div class="leftHeadings">
+                    <div class="icons">
+                        <a href="#"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-facebook" viewBox="0 0 20 20">
+                                <path fill="#121212"
+                                    d="M18 10.049C18 5.603 14.419 2 10 2s-8 3.603-8 8.049C2 14.067 4.925 17.396 8.75 18v-5.624H6.719v-2.328h2.03V8.275c0-2.017 1.195-3.132 3.023-3.132.874 0 1.79.158 1.79.158v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.219l-.355 2.326H11.25V18c3.825-.604 6.75-3.933 6.75-7.951">
+                                </path>
+                            </svg></a>
+                        <a href="#"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-instagram" viewBox="0 0 20 20">
+                                <path fill="#121212" fill-rule="evenodd"
+                                    d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.4 2.4 0 0 0-.912.593 2.5 2.5 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23s.01 2.39.046 3.229c.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046s2.39-.01 3.23-.046c.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23s-.01-2.39-.055-3.229c-.027-.784-.164-1.204-.274-1.495a2.4 2.4 0 0 0-.593-.913 2.6 2.6 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045a63 63 0 0 1 3.302.045c.664.014 1.321.14 1.943.374a4 4 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.9 3.9 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.15 4.15 0 0 1-1.414-.922 4.1 4.1 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.4 4.4 0 0 1 .92-1.414 4.2 4.2 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805m1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93m5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355"
+                                    clip-rule="evenodd"></path>
+                            </svg></a>
+                        <a href="#"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tiktok" viewBox="0 0 20 20">
+                                <path fill="#121212"
+                                    d="M10.511 1.705h2.74s-.157 3.51 3.795 3.768v2.711s-2.114.129-3.796-1.158l.028 5.606A5.073 5.073 0 1 1 8.213 7.56h.708v2.785a2.298 2.298 0 1 0 1.618 2.205z">
+                                </path>
+                            </svg></a>
+                    </div>
+                    <div class="bottomLinks">
+                        <span>
+                            <a href="#">Privacy</a>
+                        </span> |
+                        <span>
+                            <a href="#">Terms & Conditions</a>
+                        </span> |
+                        <span>
+                            <a href="#">Accessibility</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="rightHeadings">
+                    <div class="topSectionText">
+                        <p>*These statements have not been evaluated by the Food and Drug Administration. This product
+                            is not intended to diagnose, treat, cure or prevent disease.</p>
+                    </div>
+                    <div class="bottomSectionText">
+                        <p>© 2025,</p>
+                        <span>
+                            <a href="#">wholier</a>
+                        </span> |
+                        <span>
+                            <a href="#">Powered by Bonshore</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
